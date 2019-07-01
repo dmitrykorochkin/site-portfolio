@@ -1,0 +1,268 @@
+/*font-family: 'Merriweather', serif;
+font-family: 'PT Sans Caption', sans-serif;*/
+
+html, body {  /*данные значени будут применятся ко всему коду html*/
+	font-family: 'PT Sans Caption', sans-serif; /*шрифт*/
+	font-size: 16px; /*размер шрифта*/
+	line-height: 1.5; /*отступ между строками*/
+	min-width: 280px;
+}
+img {
+	display: inline-block; /*все картинки отоброжаются как блоки*/
+}
+
+* {
+	box-sizing: border-box; /*ширина всех элементов будет считаться с параметром wihgt который мы указали*/
+}
+/*_____________________________________GRID(СЕТКА)______________________________________________________*/
+
+.container {       /*класс*/
+	width:1140px;				/*ширина контейнера в котором 3 блока*/
+	margin-left: auto;			/*отступ слева авто   по ширине страничке в браузере */	
+	margin-right: auto; 		/*отступ справа авто по ширине старнчки в браузере*/		
+}
+
+.row:after {       /*псведо элемент   задется очистка  потоков обтекания float rihgt and left */
+	clear: both;	/*Отменяет обтекание элемента одновременно с правого и левого края. Это значение рекомендуется устанавливать, когда требуется снять обтекание элемента, но неизвестно точно с какой стороны*/
+	content: "";  /*позволяет вставлять генерируемое содержание в текст веб-страницы, которое первоначально в тексте отсутствует. 
+					Применяется совместно с псевдоэлементами :after и :before, они соответственно указывают отображать новое содержимое после или до элемента, к которому добавляются.*/
+	display: table; /*Определяет, что элемент является блочной таблицей */
+}
+
+.col_4 {                   /*класс кол_4 каждый из 3 блоков*/
+	width: 360px;          /*ширина каждого 360пикселей*/
+	margin-right: 30px;		/*отступ между блоками 30 пикселей*/
+	float: left;			/*колонки обтекают друг друга слевой стороны*/
+	
+}
+.col_4:last-child {      /*создается псевдокласс (last-child задает стилевое формление последнего элемента свого родителя)выбирается последняя колонка*/ 
+	margin-right:0px;
+}
+
+
+
+
+/*___________________________________________HEADER___________________________________________________________________________________*/
+
+
+
+
+
+.header {											/*класс header фон*/
+	background: #4e6bb9; 							/*задается фон, елси не прогружается картинка*/	
+	background-image: url("img/bg-header.jpg");     /*приклепляется картинка */
+	background-repeat: no-repeat;					/*не допускает повторение картинки*/
+	background-position: center;					/*позиция по центру*/	
+	background-size: cover;                        /*растягивает картинку по всему экрану */
+	height: 100vh;									/*высота 100vh - высота окна браузера в каком либо положении */	
+	min-height: 400px;								/*минимаьно возможная высота , если меньше то не будет масшатбироваться в мобильной версии*/									
+	color: #fff;									/*цвет шрифта белый*/
+	text-align: center; 							/*расположение текста по цетру*/
+	display:flex;									/*выравнивает контент по вертикали, и текст становится в ряд*/
+	flex-direction: column;							/*делает текст колонами*/
+	align-items: center;							/*выранивание по горизонтали*/
+	justify-content: center;						/*также выранивает по центру*/
+	position: relative;
+
+}
+
+.header_title {										/*класс Дмитрий корочкин*/
+	font-size: 56px;								/*размер шрифта*/
+	line-height: 62px;								/*высота строки*/
+	margin-bottom: 30px;    						/*расстояние снизу*/
+	font-family: 'Merriweather', serif;				/*шрифт*/
+	margin-top: -50px;								/*расстояние сверху с отрицательным значением , сделано для лучшего отображения текста в картинке*/
+}
+
+.header_slogan {                            /*класс слоган*/
+	font-size: 28px;						/*размер шрифта*/
+	line-height: 42px;						/*высота строки*/
+
+}
+
+.header_arow {                            /*класс картинки*/
+	font-size: 48px;   
+	width: 60px;
+	height: 50px;
+	margin-left: -30px;
+	position: absolute;     /*позиция абсолют*/ 
+	bottom:50px;
+	left: 50%;
+	
+}	
+
+
+/*___________________________________________________PORTFOLIO__________________________________________________________________*/
+.title {
+	font-size: 46px;
+	margin-bottom: 60px;
+	font-family: 'Merriweather', serif;	
+	text-align: center;
+
+}
+.portfolio_item_image {
+	margin-bottom: 17px;
+	
+}
+.portfolio_item_image img {
+	max-width: 100%;
+	height: auto;
+
+}
+.portfolio_item_title {
+	font-size: 24px;
+	line-height: normal;
+	margin-bottom: 5px;
+}
+.portfolio_item_text {
+	font-size: 16px;
+	line-height: 1.5;
+
+
+}
+.portfolio { /*класс портфолио и отступы для для блока в целом сверху и снизу*/
+	padding-top: 70px;
+	padding-bottom: 100px;
+
+}
+.portfolio_item {  /*класс портфолио */
+	margin-bottom: 20px; /*отступ сделан для того если будет добавлен второй или третий ряд с работами*/
+}
+
+.portfolio_item_title a {
+	text-decoration: none;
+	color: #000;
+	border-bottom: 1px solid #000;
+}
+.portfolio_item_title a:hover {
+	color: #0052c2;
+	border-color: rgba(0,82,192,0.3);
+}
+
+.portfolio_item_text p {
+	margin-top: 0px;
+	margin-bottom: 15px;
+
+}
+/*____________________________________________portfolio_____________________________________________________________*/
+
+
+
+/*____________________________________________FOOTER_____________________________________________________________*/
+
+
+.footer {
+	background-color: #061634;
+	color: #6479a2;
+	padding-top: 90px;
+	padding-bottom: 190px;
+}
+.footer p {
+	margin-top: 0px;
+	margin-bottom: 15px;
+}
+
+p.footer_name {
+	font-size: 28px;
+	margin-bottom: 10px;
+	line-height: normal;
+	font-family: 'Merriweather', serif;	
+}
+p.footer_social {
+	color: #fff;
+
+}
+p.footer_social_icon {
+	color: #fff;
+	font-size: 32px;
+
+}
+p.footer_social_icon a {
+	color: #fff;
+	text-decoration: none;
+	margin-right: 30px;
+}
+
+p.footer_social_icon a:last-child {
+	margin-right: 0px;
+}
+p.footer_social_icon a:hover {
+	color: #ffe400;
+}
+.button {
+	font-weight: 700; /*толщина шрифкта*/
+	display:inline-block;
+	border-width: 2px; /*ШИРИНА ЛИНИИ*/
+	border-color: #fff; /*цвет  линии*/
+	border-style: solid; /*непрерывная линия*/
+	border-radius: 50px; /*радиус линии рамки*/
+	text-decoration: none; /*убрать подчеркивание ссылки*/
+	color: white;  
+	text-transform: uppercase; /*заглавные буквы*/
+	letter-spacing: 1.6px; 
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 23px;
+	padding-right: 23px;
+	margin-bottom: 13px;
+	transition: 0.2s ease-out; /*время изминения цвета ссылки после наведения на нее курсора*/
+
+
+}
+.button:hover {
+	color: #c4e896;
+	border-color:#c4e896; 
+}
+
+
+/*____________________________________________media_____________________________________________________________*/
+
+
+
+/*при ширине экрана при 1160px и менее - будет выполнен наш запрос*/
+@media (max-width: 1160px) {
+
+		.container {
+			width: 100%;
+
+		}
+
+		.col_4 {
+			width: 100%; /*реальная ширина = wight:100% + border = 0 + padding = 15px+15px = */
+			box-sizing: border-box; /*ширина от рамки до рамки*/
+			margin: 0; /*обнуляюься все внешние отступы у колонок*/
+			margin-bottom: 30px; /*расстояние между колонками снизу*/
+			padding-left: 15px; /*расстояние слева и справа*/
+			padding-right: 15px;
+			text-align: center; /*центрирование текста*/
+
+		}
+
+		.header {
+			padding-right: 15px;
+			padding-left: 15px;
+		}	
+		.header_title {
+			font-size: 38px;
+			line-height: 48px; /*высота строчки*/
+			margin-bottom: 15px;
+
+		}
+		.header_slogan {
+			font-size: 22px;
+			line-height: 38px;
+		}
+		.portfolio { 
+			padding-top: 40px; /*внутренние отступы*/
+			padding-bottom: 50px;
+
+		}
+		.title {
+			font-size: 36px; 
+		}
+
+		.footer {
+			padding-top: 70px;
+			padding-bottom: 60px;
+		}
+} 
